@@ -9,7 +9,7 @@ import { parseEther } from 'viem'
 import { useAccount } from 'wagmi'
 
 import { useEthersSigner } from '@/useEthersSigner'
-import { WAGMI_GOTCHI_ABI } from '@/wallet'
+import { WAGMI_GOTCHI_ABI } from '@/walletProvider'
 
 // const { config, error, isSuccess } = usePrepareContractWrite({
 //   abi: WAGMI_GOTCHI_ABI,

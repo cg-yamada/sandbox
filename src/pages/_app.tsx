@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 
 import { MantineUIProvider } from '@/mantine'
-import { WalletProvider } from '@/wallet'
+import { WalletProvider } from '@/walletProvider'
 import '@mantine/core/styles.css'
 
 export default function App({ pageProps, Component }: AppProps) {
