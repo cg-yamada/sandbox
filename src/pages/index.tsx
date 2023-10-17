@@ -55,7 +55,7 @@ const Index = () => {
   const handleSeaport = async () => {
     try {
       if (!signer || !accountAddress) return
-      const seaport = new Seaport(signer)
+      const seaport = new Seaport(signer, { seaportVersion: '1.5' })
 
       // 出品するアイテム
       const offer: CreateInputItem[] = [
