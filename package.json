@@ -1,0 +1,66 @@
+{
+  "private": true,
+  "name": "seaport-sandbox",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "dev:mobile": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "run-p -c -l lint:**",
+    "lint:eslint": "eslint src --ext .ts,.tsx",
+    "lint:tsc": "tsc",
+    "fix": "run-s -l fix:**",
+    "fix:prettier": "prettier --write src",
+    "fix:eslint": "eslint src --ext .ts,.tsx --fix"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.1.3",
+    "@mantine/form": "^7.1.3",
+    "@mantine/hooks": "^7.1.3",
+    "@mantine/notifications": "^7.1.3",
+    "@opensea/seaport-js": "^2.0.8",
+    "@tabler/icons-react": "^2.31.0",
+    "@web3modal/ethereum": "2.7.1",
+    "@web3modal/react": "2.7.1",
+    "ethers": "5.6.9",
+    "next": "^13.4.1",
+    "nookies": "^2.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.4.0",
+    "viem": "^1.15.4",
+    "wagmi": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.29",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "dotenv": "^16.0.3",
+    "eslint": "8.14.0",
+    "eslint-config-next": "^13.2.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "openapi-typescript": "^6.5.4",
+    "prettier": "^2.7.1",
+    "prisma": "4.16.0",
+    "typescript": "5.0.4"
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 150,
+    "tabWidth": 2,
+    "arrowParens": "avoid"
+  }
+}

@@ -1,0 +1,21 @@
+name: Test
+
+on: push
+
+jobs:
+  all-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18'
+      - name: Install
+        run: yarn install && yarn prisma:generate
+
+      - name: Lint Test
+        run: yarn lint
+
+      # - name: Unit Test
+      #   run: yarn test --passWithNoTests

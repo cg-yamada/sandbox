@@ -1,0 +1,6 @@
+jest.config.js
+next.config.mjs
+playwright.config.ts
+.eslintrc.json
+next-env.d.ts
+codegen.ts

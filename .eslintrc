@@ -1,0 +1,65 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    // "eslint:recommended",
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "unused-imports"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin", // 組み込みモジュール
+          "external", // yarn add したパッケージ
+          "internal", // 自作モジュール
+          "parent", // 親階層のファイル
+          "sibling", // 同階層のファイル
+          "index" // 同階層の index ファイル
+        ],
+        "newlines-between": "always",
+        // "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "react/jsx-uses-react": "off", // eslint-plugin-reactを使用している場合不要
+    "react/react-in-jsx-scope": "off", // eslint-plugin-reactを使用している場合不要
+    "react/no-children-prop": "off", // childrenを属性値として渡せるようにする
+    "react/prop-types": "off", // propsの厳密なバリデーションをするか？
+    "@typescript-eslint/no-explicit-any": "warn" // anyはwarning
+    // "@typescript-eslint/explicit-function-return-type": 0,
+    // "react/jsx-uses-vars": [2],
+    // "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
+}
