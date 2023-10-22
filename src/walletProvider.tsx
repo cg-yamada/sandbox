@@ -1,16 +1,37 @@
 // import '@rainbow-me/rainbowkit/styles.css'
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
-import { ReactNode } from 'react'
-import { WagmiConfig, mainnet } from 'wagmi'
+import { InjectedConnector } from '@wagmi/core'
+import { EIP6963Connector, walletConnectProvider } from '@web3modal/wagmi'
+import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { WagmiConfig, configureChains, createConfig, mainnet } from 'wagmi'
 import { polygonMumbai } from 'wagmi/chains'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+import { publicProvider } from 'wagmi/providers/public'
 
 const projectId = 'd85620ed10d973419ed7440fa51a707d'
-const chains = [mainnet, polygonMumbai]
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata: { name: 'sandbox' } })
+const metadata = {
+  name: 'Web3Modal',
+  description: 'Web3Modal Example',
+  url: 'https://web3modal.com',
+  icons: ['https://avatars.githubusercontent.com/u/37784886'],
+}
+
+const { chains, publicClient } = configureChains([mainnet, polygonMumbai], [walletConnectProvider({ projectId }), publicProvider()])
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors: [
+    new WalletConnectConnector({ chains, options: { projectId, showQrModal: false, metadata } }),
+    new EIP6963Connector({ chains }),
+    new InjectedConnector({ chains, options: { shimDisconnect: true } }),
+    new CoinbaseWalletConnector({ chains, options: { appName: metadata.name } }),
+  ],
+  publicClient,
+})
 
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
-export const WalletProvider = ({ children }: { children: ReactNode }) => {
+export const WalletProvider = ({ children }: { children: React.ReactNode }) => {
   return <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>
 }
 
