@@ -2,23 +2,19 @@
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { ReactNode } from 'react'
-import { polygonMumbai } from 'viem/chains'
 import { WagmiConfig, configureChains, createConfig } from 'wagmi'
+import { polygonMumbai } from 'wagmi/chains'
 
-interface Props {
-  children: ReactNode
-}
+const projectId = 'd85620ed10d973419ed7440fa51a707d'
+const chains = [polygonMumbai]
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
+const config = createConfig({
+  autoConnect: true,
+  connectors: w3mConnectors({ projectId, chains }),
+  publicClient,
+})
 
-export const WalletProvider = ({ children }: Props) => {
-  const projectId = 'd85620ed10d973419ed7440fa51a707d'
-  const chains = [polygonMumbai]
-  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-  const config = createConfig({
-    autoConnect: true,
-    connectors: w3mConnectors({ projectId, chains }),
-    publicClient,
-  })
-
+export const WalletProvider = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <WagmiConfig config={config}>{children}</WagmiConfig>

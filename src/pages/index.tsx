@@ -11,13 +11,6 @@ import { useAccount } from 'wagmi'
 import { useEthersSigner } from '@/useEthersSigner'
 import { WAGMI_GOTCHI_ABI } from '@/walletProvider'
 
-// const { config, error, isSuccess } = usePrepareContractWrite({
-//   abi: WAGMI_GOTCHI_ABI,
-//   address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
-//   functionName: 'feed',
-// })
-// const { write } = useContractWrite(config)
-
 /**
  * @link https://github.com/wagmi-dev/wagmi
  * @link https://wagmi.sh/react/hooks/useContractWrite#functionname
@@ -76,22 +69,24 @@ const Index = () => {
       ]
 
       // accountAddress: orderを作成した人を指す？
-      const { executeAllActions } = await seaport.createOrder({ offer, consideration }, accountAddress)
+      const { executeAllActions, actions } = await seaport.createOrder({ offer, consideration }, accountAddress)
+      actions.map(action => console.log('action', action.type))
       console.log('createOrder')
       const order = await executeAllActions()
-      console.log('executeAllActions')
+      console.log('executeAllActions', order)
 
       // accountAddress: 注文履行者(注文を約束する人)
-      const { executeAllActions: executeFullfillAllActions } = await seaport.fulfillOrder({ order, accountAddress })
-      console.log('fulfillOrder')
-      const transaction = await executeFullfillAllActions()
-      console.log('executeFullfillAllActions')
+      // const { executeAllActions: executeFullfillAllActions } = await seaport.fulfillOrder({ order, accountAddress })
+      // console.log('fulfillOrder')
+      // const transaction = await executeFullfillAllActions()
+      // console.log('executeFullfillAllActions')
 
-      return transaction
+      // return transaction
     } catch (error) {
-      console.log({ error })
       // @ts-ignore
-      setErr(String(error?.message))
+      const errorMessage = String(error?.message)
+      console.log('errorMessage', errorMessage)
+      setErr(errorMessage)
     } finally {
       setIsLoading(false)
     }
@@ -103,13 +98,15 @@ const Index = () => {
   return (
     <Container mt={80}>
       {isLoading && <Loader />}
-      {err && <Text>{`error: ${err}`}</Text>}
-      <Text>{`isConnected: ${isConnected}`}</Text>
-      <Text>{`accountAddress: ${accountAddress}`}</Text>
-      <Flex my={20} gap={4} align="center" justify="center">
+      <Flex gap={10} justify="center" direction="column">
+        {err && <Text>{`error: ${err}`}</Text>}
+        <Text>{`isConnected: ${isConnected}`}</Text>
+        <Text>{`accountAddress: ${accountAddress}`}</Text>
         <Web3Button icon="show" label="ウォレット接続" balance="show" />
-        <Button variant="filled" children="wagmi操作" disabled={!isConnected} onClick={handleContract} />
-        <Button variant="filled" children="seaport操作" disabled={!isConnected} onClick={handleSeaport} />
+        <Flex gap={10}>
+          <Button variant="filled" children="wagmi操作" disabled={!isConnected} onClick={handleContract} />
+          <Button variant="filled" children="seaport操作" disabled={!isConnected} onClick={handleSeaport} />
+        </Flex>
       </Flex>
     </Container>
   )
