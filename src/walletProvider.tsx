@@ -1,43 +1,17 @@
 // import '@rainbow-me/rainbowkit/styles.css'
-import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
-import { Web3Modal } from '@web3modal/react'
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 import { ReactNode } from 'react'
-import { WagmiConfig, configureChains, createConfig } from 'wagmi'
+import { WagmiConfig, mainnet } from 'wagmi'
 import { polygonMumbai } from 'wagmi/chains'
 
 const projectId = 'd85620ed10d973419ed7440fa51a707d'
-const chains = [polygonMumbai]
-const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-const config = createConfig({
-  autoConnect: true,
-  connectors: w3mConnectors({ projectId, chains }),
-  publicClient,
-})
+const chains = [mainnet, polygonMumbai]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata: { name: 'sandbox' } })
+
+createWeb3Modal({ wagmiConfig, projectId, chains })
 
 export const WalletProvider = ({ children }: { children: ReactNode }) => {
-  return (
-    <>
-      <WagmiConfig config={config}>{children}</WagmiConfig>
-      <Web3Modal
-        projectId={projectId}
-        ethereumClient={new EthereumClient(config, chains)}
-        mobileWallets={[
-          {
-            id: 'metamask',
-            name: 'MetaMask',
-            links: {
-              native: 'metamask://',
-              universal: 'https://metamask.app.link/',
-            },
-          },
-        ]}
-        explorerRecommendedWalletIds={[
-          // metamask
-          'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
-        ]}
-      />
-    </>
-  )
+  return <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>
 }
 
 export const WAGMI_GOTCHI_ABI = [
