@@ -16,7 +16,7 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <meta name="description" content="" />
-          <meta httpEquiv="Content-Security-Policy" content={generateCsp()} />
+          {/* <meta httpEquiv="Content-Security-Policy" content={generateCsp()} /> */}
           <ColorSchemeScript />
         </Head>
         <Main />
