@@ -4,7 +4,7 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 export const generateCsp = (): string => {
   const csp = `
   script-src 'self' 'unsafe-eval' *.walletconnect.org *.walletconnect.com;
-  connect-src blob: https://api.web3modal.com wss://relay.walletconnect.org  wss://*.walletconnect.org *.walletconnect.org *.walletconnect.com 'self';
+  connect-src blob: https://api.web3modal.com wss://relay.walletconnect.org wss://relay.walletconnect.com  wss://*.walletconnect.org *.walletconnect.org *.walletconnect.com 'self';
   frame-src *.walletconnect.org *.walletconnect.com 'self';
   `
   return csp.replace(/\s{2,}/g, ' ').trim()
