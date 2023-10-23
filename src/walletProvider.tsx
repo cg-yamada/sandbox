@@ -3,7 +3,7 @@ import { EIP6963Connector, walletConnectProvider } from '@web3modal/wagmi'
 import { createWeb3Modal } from '@web3modal/wagmi/react'
 import { WagmiConfig, configureChains, createConfig } from 'wagmi'
 import { polygonMumbai } from 'wagmi/chains'
-// import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { publicProvider } from 'wagmi/providers/public'
 
@@ -28,7 +28,7 @@ const wagmiConfig = createConfig({
     new WalletConnectConnector({ chains, options: { projectId, showQrModal: false, metadata } }),
     new EIP6963Connector({ chains }),
     new InjectedConnector({ chains, options: { shimDisconnect: true } }),
-    // new CoinbaseWalletConnector({ chains, options: { appName: metadata.name } }),
+    new CoinbaseWalletConnector({ chains, options: { appName: metadata.name } }),
   ],
   publicClient,
 })
