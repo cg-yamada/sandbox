@@ -3,7 +3,6 @@ import { Seaport } from '@opensea/seaport-js'
 import { ItemType } from '@opensea/seaport-js/lib/constants'
 import { ConsiderationInputItem, CreateInputItem } from '@opensea/seaport-js/lib/types'
 import { prepareWriteContract, waitForTransaction, writeContract } from '@wagmi/core'
-import { Web3Button } from '@web3modal/react'
 import { useEffect, useState } from 'react'
 import { parseEther } from 'viem'
 import { useAccount } from 'wagmi'
@@ -24,7 +23,7 @@ const Index = () => {
   const [isMounted, setIsMounted] = useState(false)
   useEffect(() => setIsMounted(true), [])
 
-  const handleContract = async () => {
+  const handleWagmi = async () => {
     try {
       setIsLoading(true)
       const config = await prepareWriteContract({
@@ -47,6 +46,7 @@ const Index = () => {
 
   const handleSeaport = async () => {
     try {
+      setErr('')
       if (!signer || !accountAddress) return
       const seaport = new Seaport(signer, { seaportVersion: '1.5' })
 
@@ -102,9 +102,9 @@ const Index = () => {
         {err && <Text>{`error: ${err}`}</Text>}
         <Text>{`isConnected: ${isConnected}`}</Text>
         <Text>{`accountAddress: ${accountAddress}`}</Text>
-        <Web3Button icon="show" label="ウォレット接続" balance="show" />
+        <w3m-button label="ウォレット接続" />
         <Flex gap={10}>
-          <Button variant="filled" children="wagmi操作" disabled={!isConnected} onClick={handleContract} />
+          <Button variant="filled" children="wagmi操作" disabled={!isConnected} onClick={handleWagmi} />
           <Button variant="filled" children="seaport操作" disabled={!isConnected} onClick={handleSeaport} />
         </Flex>
       </Flex>
