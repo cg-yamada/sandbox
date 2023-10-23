@@ -63,7 +63,7 @@ const Index = () => {
         {
           itemType: ItemType.ERC721,
           token: '0x0000000000000000000000000000000000000000', // MATIC
-          identifier: new Date().toISOString(),
+          identifier: '1',
           recipient: accountAddress, // どのアドレスが受け取るか
         },
       ]
