@@ -19,8 +19,13 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 }
 
-// TODO: 本番環境向けにpolygonを追加する
-const { chains, publicClient } = configureChains([mainnet, polygonMumbai], [walletConnectProvider({ projectId }), publicProvider()])
+/**
+ *
+ * @see https://github.com/wagmi-dev/wagmi/issues/3130
+ * chainは複数指定が必要？
+ * TODO: 本番環境向けにpolygonを追加する
+ */
+const { chains, publicClient } = configureChains([polygonMumbai, mainnet], [walletConnectProvider({ projectId }), publicProvider()])
 
 const wagmiConfig = createConfig({
   autoConnect: true,
