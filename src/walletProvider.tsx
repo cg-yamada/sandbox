@@ -1,4 +1,4 @@
-import { InjectedConnector } from '@wagmi/core'
+import { InjectedConnector, mainnet } from '@wagmi/core'
 import { EIP6963Connector, walletConnectProvider } from '@web3modal/wagmi'
 import { createWeb3Modal } from '@web3modal/wagmi/react'
 import { WagmiConfig, configureChains, createConfig } from 'wagmi'
@@ -20,7 +20,7 @@ const metadata = {
 }
 
 // TODO: 本番環境向けにpolygonを追加する
-const { chains, publicClient } = configureChains([polygonMumbai, polygonMumbai], [walletConnectProvider({ projectId }), publicProvider()])
+const { chains, publicClient } = configureChains([mainnet, polygonMumbai], [walletConnectProvider({ projectId }), publicProvider()])
 
 const wagmiConfig = createConfig({
   autoConnect: true,
