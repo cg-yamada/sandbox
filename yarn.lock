@@ -1234,9 +1234,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@opensea/seaport-js@https://github.com/cg-yamada/seaport-js":
+"@opensea/seaport-js@^2.0.8":
   version "2.0.8"
-  resolved "https://github.com/cg-yamada/seaport-js#1ca463a14b216784aa78b85eeffc10f9b03701df"
+  resolved "https://registry.yarnpkg.com/@opensea/seaport-js/-/seaport-js-2.0.8.tgz#7050c7273073a59296fbad8eaa2af5f1fa6df3b6"
+  integrity sha512-uOjqXtXK49vbOoxXy/z54evxV3OtExjNe81E9CK6v6nOX0vDZH6dnDSTbC8ELL1RrAXM8dmDMtA0szepDyoaKQ==
   dependencies:
     "@0xsequence/multicall" "^0.43.29"
     ethers "^5.7.2"
