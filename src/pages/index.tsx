@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react'
 import { parseEther } from 'viem'
 import { useAccount } from 'wagmi'
 
-import { useEthersSigner } from '@/useEthersSigner'
-import { WAGMI_GOTCHI_ABI } from '@/walletProvider'
+import { wagmiGotchContract } from '@/contracts'
+import { useEthersSigner } from '@/hooks/useEthersSigner'
 
 /**
  * @link https://github.com/wagmi-dev/wagmi
@@ -25,11 +25,12 @@ const Index = () => {
 
   const handleWagmi = async () => {
     try {
+      setErr('')
       setIsLoading(true)
       const config = await prepareWriteContract({
-        abi: WAGMI_GOTCHI_ABI,
-        address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
         functionName: 'feed',
+        abi: wagmiGotchContract.WAGMI_GOTCHI_ABI,
+        address: wagmiGotchContract.contractAddress,
       })
       console.log('success prepareWriteContract')
       const { hash } = await writeContract(config.request)
@@ -38,7 +39,10 @@ const Index = () => {
       console.log('success waitForTransaction')
       return hash
     } catch (error) {
-      console.log({ error })
+      // @ts-ignore
+      const errorMessage = String(error?.message)
+      console.log('errorMessage', errorMessage)
+      setErr(errorMessage)
     } finally {
       setIsLoading(false)
     }
@@ -95,6 +99,7 @@ const Index = () => {
   if (!isMounted) {
     return <Loader />
   }
+
   return (
     <Container mt={80}>
       {isLoading && <Loader />}

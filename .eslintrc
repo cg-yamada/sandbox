@@ -12,16 +12,7 @@
       "jsx": true
     }
   },
-  "extends": [
-    // "eslint:recommended",
-    // "plugin:@typescript-eslint/eslint-recommended",
-    // "plugin:@typescript-eslint/recommended",
-    // "plugin:jest/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@next/next/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:@next/next/recommended", "prettier"],
   "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "unused-imports"],
   "settings": {
     "react": {
@@ -52,14 +43,11 @@
         "pathGroupsExcludedImportTypes": ["react"]
       }
     ],
-    "@typescript-eslint/no-unused-vars": ["error"],
     "react/jsx-uses-react": "off", // eslint-plugin-reactを使用している場合不要
     "react/react-in-jsx-scope": "off", // eslint-plugin-reactを使用している場合不要
-    "react/no-children-prop": "off", // childrenを属性値として渡せるようにする
-    "react/prop-types": "off", // propsの厳密なバリデーションをするか？
-    "@typescript-eslint/no-explicit-any": "warn" // anyはwarning
-    // "@typescript-eslint/explicit-function-return-type": 0,
-    // "react/jsx-uses-vars": [2],
-    // "@typescript-eslint/explicit-module-boundary-types": "off"
+    "react/no-children-prop": "off", // childrenを属性値として渡させない
+    "react/prop-types": "off", // propsの厳密なバリデーションをする
+    "@typescript-eslint/no-explicit-any": "warn", // anyのエラーレベルを指定する
+    "@typescript-eslint/no-unused-vars": "error" // 未使用変数のエラーレベルを指定する
   }
 }

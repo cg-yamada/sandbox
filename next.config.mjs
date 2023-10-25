@@ -6,7 +6,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'dev.vercel.app', 'dev.api.com', 'stg.api.com'],
+    domains: ['localhost', 'sandbox.vercel.app', 'sandbox.api.com', 'stg.api.com'],
   },
   async headers() {
     return [
