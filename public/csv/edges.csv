@@ -1,0 +1,14 @@
+From Type,From Name,Edge Type,To Type,To Name,Weight
+Person,Burak,COLLABORATED,Person,Alexis,1
+Person,Burak,COLLABORATED,Person,Ayca,1
+Person,Burak,COLLABORATED,Person,Paul,1
+Person,Alexis,COLLABORATED,Person,Paul,1
+Person,Benoit,COLLABORATED,Person,Alexis,1
+Person,Benoit,BASED IN,City,Nantes,1
+Person,Ahmet,BASED IN,City,Hong Kong,1
+Organization,Graph Commons,BASED IN,City,New York; Istanbul; Hong Kong,1
+Organization,Graph Commons,PARTNERED WITH,Organization,New Lab,1
+Organization,New Lab,BASED IN,City,New York,1
+Person,Burak,WORKS,Organization,Graph Commons,7
+Person,Ayca,WORKS,Organization,Graph Commons,3
+Person,YAMADA,WORKS,Organization,Graph Commons,3
