@@ -1,5 +1,5 @@
 import { graphService } from "@/services/graphService"
-import { Box, Container, FileInput, Flex } from "@mantine/core"
+import { Box, Container, FileInput } from "@mantine/core"
 import type { Metadata } from "next/types"
 
 export const metadata: Metadata = {
@@ -18,15 +18,13 @@ export default async function HomePage() {
   // )
   return (
     <Container py={40}>
-      {/* <Form /> */}
-      <Flex gap={20} justify="space-between">
+      <Box>
+        <FileInput label="input:file" description="" w="300px" />
+      </Box>
+      <Box mt={40} mx="auto" w="90vw">
         {/* biome-ignore lint/a11y/useIframeTitle: <explanation> */}
-        <iframe src={`https://graphcommons.com/graphs/${graphService.graphId}`} width="800" height="600" />
-
-        <Box>
-          <FileInput label="input:file" description="" w="300px" />
-        </Box>
-      </Flex>
+        <iframe src={`https://graphcommons.com/graphs/${graphService.graphId}`} width="100%" height="600" />
+      </Box>
     </Container>
   )
 }
