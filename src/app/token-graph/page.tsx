@@ -3,11 +3,11 @@ import { Box, Container, FileInput } from "@mantine/core"
 import type { Metadata } from "next/types"
 
 export const metadata: Metadata = {
-  title: "GraphCommons",
-  description: "GraphCommons",
+  title: "TokenGraph",
+  description: "TokenGraph",
 }
 
-export default async function GraphPage() {
+export default async function TokenGraphPage() {
   // const { nodes } = await graphService.getGraph()
   // console.log({ nodes })
   // const res = await graphService.addNode(nodes[2].id)

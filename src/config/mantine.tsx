@@ -35,7 +35,8 @@ export const MantineUIProvider = ({ children }: { children: ReactNode }) => {
             },
           }),
           Anchor: Anchor.extend({
-            defaultProps: { c: "#4484BC", underline: "always" },
+            // defaultProps: { c: "#4484BC", underline: "always" },
+            defaultProps: { c: "inherit" },
           }),
 
           Button: Button.extend({

@@ -2,6 +2,18 @@ export const APP_TITLE = "sptv-poc"
 
 export const Paths = {
   HOME: "/",
+  /** 作品一覧 */
+  COMICS: "/comics",
+  /** 作品視聴 */
+  COMIC: "/comics/:id",
+  /** 作品投稿 */
+  COMIC_CREATE: "/comics/create",
+  /** 投稿実績 */
+  USER_COMICS: "/mypage",
+  /** 実績確認 */
+  ADMIN: "/admin",
+  /** TokenGraph */
+  TOKEN_GRAPH: "/token-graph",
 } as const
 
 export const Images = {
