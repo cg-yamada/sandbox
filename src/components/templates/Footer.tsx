@@ -6,13 +6,13 @@ export function Footer() {
     <Box bg="#eceef1" pos="sticky" bottom={0} style={{ zIndex: 99 }}>
       <SimpleGrid cols={3} spacing={2}>
         <Box py={20} ta="center" bg="white">
-          <Anchor variant="gradient" href={Paths.COMICS} children="作品一覧" />
+          <Anchor c="black" href={Paths.COMICS} children="作品一覧" />
         </Box>
         <Box py={20} ta="center" bg="white">
-          <Anchor variant="gradient" href={Paths.COMIC_CREATE} children="作品投稿" />
+          <Anchor c="black" href={Paths.COMIC_CREATE} children="作品投稿" />
         </Box>
         <Box py={20} ta="center" bg="white">
-          <Anchor variant="gradient" href={Paths.TOKEN_GRAPH} children="TokenGraph" />
+          <Anchor c="black" href={Paths.TOKEN_GRAPH} children="TokenGraph" />
         </Box>
       </SimpleGrid>
     </Box>
