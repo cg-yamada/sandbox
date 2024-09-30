@@ -18,7 +18,7 @@ export default function HomePage() {
     <Container py={40}>
       <SimpleGrid spacing={20} cols={1}>
         {items.map((item) => (
-          <Paper pt={32} pb={12} px={20} shadow="xl" key={item.id}>
+          <Paper pt={32} pb={12} px={20} shadow="xl" radius="md" key={item.id}>
             <SimpleGrid mb={16} spacing={12} cols={2}>
               <Image h="200px" src={item.leftImage} />
               <Image h="200px" src={item.rightImage} />
