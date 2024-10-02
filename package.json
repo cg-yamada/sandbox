@@ -2,7 +2,7 @@
   "private": true,
   "name": "sptv-poc-front",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "engines": {
     "node": "18"
   },

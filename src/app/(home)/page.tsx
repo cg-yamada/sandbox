@@ -9,20 +9,17 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const items = [
-    { id: "1", title: "ワンピース01巻", createrName: "尾田栄一郎", leftImage: "dummy/dummy01.jpg", rightImage: "dummy/dummy03.jpg" },
-    { id: "2", title: "ワンピース02巻", createrName: "尾田栄一郎", leftImage: "dummy/dummy02.jpg", rightImage: "dummy/dummy03.jpg" },
-    { id: "3", title: "ワンピース03巻", createrName: "尾田栄一郎", leftImage: "dummy/dummy01.jpg", rightImage: "dummy/dummy03.jpg" },
-    { id: "4", title: "ワンピース04巻", createrName: "尾田栄一郎", leftImage: "dummy/dummy02.jpg", rightImage: "dummy/dummy03.jpg" },
+    { id: "1", title: "投稿物Title", createrName: "投稿者名称", image: "dummy/noimage.png" },
+    { id: "2", title: "投稿物Title", createrName: "投稿者名称", image: "dummy/noimage.png" },
+    { id: "3", title: "投稿物Title", createrName: "投稿者名称", image: "dummy/noimage.png" },
+    { id: "4", title: "投稿物Title", createrName: "投稿者名称", image: "dummy/noimage.png" },
   ]
   return (
     <Container py={40}>
       <SimpleGrid spacing={20} cols={1}>
         {items.map((item) => (
           <Paper pt={32} pb={12} px={20} shadow="xl" radius="md" key={item.id}>
-            <SimpleGrid mb={16} spacing={12} cols={2}>
-              <Image h="200px" src={item.leftImage} />
-              <Image h="200px" src={item.rightImage} />
-            </SimpleGrid>
+            <Image mb={16} h="200px" src={item.image} fit="cover" />
             <Anchor href={Paths.COMIC.replace(":id", item.id)}>
               <Text fz={16} lh="20px" fw="bold" children={item.title} />
               <Text ml={2} fz={12} children={item.createrName} />
