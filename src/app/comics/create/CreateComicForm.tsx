@@ -29,7 +29,7 @@ export const CreateComicForm = () => {
 
   const previewImages = files.map((file, i) => {
     const imageUrl = URL.createObjectURL(file)
-    return <Image key={String(i)} src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
+    return <Image maw={300} key={String(i)} src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
   })
 
   return (
