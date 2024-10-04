@@ -19,10 +19,9 @@ export const CreateComicForm = () => {
     },
   })
 
-  /** 検索する */
   const handleSubmit = async (input: CreateComicFormInput) => {
     console.log({ input })
-    router.push(Paths.COMICS)
+    router.push(Paths.USER_COMICS)
   }
 
   const [files, setFiles] = useState<FileWithPath[]>([])
