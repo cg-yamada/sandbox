@@ -1,11 +1,11 @@
 export interface Comic {
   id: string
   /** サムネイル画像 */
-  image: string
+  thumbnail: string
   /** タイトル */
   title: string
   /** タグ */
-  tag: string
+  tags: string[]
   /** 視聴回数 */
   views: number
   /** いいね数 */
@@ -14,4 +14,8 @@ export interface Comic {
   receivedPOL: number
   /** 公開中かどうか */
   isPublic: boolean
+  /** クリエイター名 */
+  creator: string
+  /** NFT画像 */
+  nftImage: string
 }

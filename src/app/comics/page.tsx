@@ -2,6 +2,7 @@ import { ImageWithModal } from "@/components/elements/ImageWithModal"
 import { Paths } from "@/config/consts"
 import { items } from "@/dummy"
 import { Anchor, Button, Container, Paper, SimpleGrid, Text } from "@mantine/core"
+import Link from "next/link"
 import type { Metadata } from "next/types"
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function ComicsPage() {
           {items.map((item) => (
             <Paper pt={32} pb={12} px={20} shadow="xl" radius="md" key={item.id}>
               <ImageWithModal mb={16} h="200px" src={item.image} fit="contain" />
-              <Anchor href={Paths.COMIC.replace(":id", item.id)}>
+              <Anchor component={Link} href={Paths.COMIC.replace(":id", item.id)}>
                 <Text fz={16} lh="20px" fw="bold" children={item.title} />
                 <Text ml={2} fz={12} children={item.createrName} />
               </Anchor>
