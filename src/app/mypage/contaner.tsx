@@ -45,7 +45,7 @@ export const MypageContainer = () => {
       </Paper>
 
       <Text ml={8} mt={40} mb={12} fz={18} fw="bold" children="他の投稿作品" />
-      <Paper py={20}>
+      <Paper py={20} shadow="xl" radius="sm">
         <ScrollArea w="100%">
           <Flex gap={20}>
             {dummyComics.map((comic) => (
@@ -57,7 +57,10 @@ export const MypageContainer = () => {
                 fit="contain"
                 src={comic.thumbnail}
                 key={comic.id}
-                onClick={() => setCurrentComic(comic)}
+                onClick={() => {
+                  setCurrentComic(comic)
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }}
               />
             ))}
           </Flex>
