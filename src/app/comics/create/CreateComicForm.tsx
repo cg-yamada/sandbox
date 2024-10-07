@@ -38,8 +38,8 @@ export const CreateComicForm = () => {
           <Stack gap={24}>
             <Dropzone accept={IMAGE_MIME_TYPE} onDrop={handleDrop}>
               {!currentImageUrl && <Text py={20} bg="gray.2" fw="bold" ta="center" children="画像を選択してください" />}
-              {currentImageUrl && <Image m="auto" h={200} fit="contain" src={currentImageUrl} onLoad={() => URL.revokeObjectURL(currentImageUrl)} />}
             </Dropzone>
+            {currentImageUrl && <Image m="auto" h={200} fit="contain" src={currentImageUrl} onLoad={() => URL.revokeObjectURL(currentImageUrl)} />}
             <Group>
               <TextInput w="100%" {...form.getInputProps("title")} label="タイトル" withAsterisk />
               <TextInput w="100%" {...form.getInputProps("tag")} label="タグ" error={!!form.errors.tag} withAsterisk />
