@@ -26,7 +26,7 @@ export const MypageContainer = () => {
           ))}
         </Flex>
         <Anchor component={Link} href={Paths.USER_ACHIVEMENT}>
-          <Image src={currentComic.nftImage} m="auto" w="100%" fit="contain" />
+          <Image src={currentComic.nftImage} m="auto" w={100} fit="contain" />
         </Anchor>
         <Space h="md" />
         <Anchor component={Link} href={Paths.TOKEN_GRAPH}>
