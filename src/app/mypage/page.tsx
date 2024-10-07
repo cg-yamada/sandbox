@@ -19,7 +19,7 @@ export default function Page() {
         <Flex justify="flex-end">
           <Badge ta="right" size="lg" children={dummyComics[0].isPublic ? "公開中" : "非公開"} />
         </Flex>
-        <ImageWithModal mt={16} h="200px" src={dummyComics[0].thumbnail} fit="contain" />
+        <ImageWithModal mt={16} h={200} src={dummyComics[0].thumbnail} fit="cover" />
         <Text mt={16} fz={20} lh="24px" fw="bold" children={dummyComics[0].title} />
         <Flex mt={8} mb={16} gap={8}>
           {dummyComics[0].tags.map((tag) => (
@@ -27,7 +27,7 @@ export default function Page() {
           ))}
         </Flex>
         <Anchor component={Link} href={Paths.USER_ACHIVEMENT}>
-          <Image src={dummyComics[0].nftImage} h="100px" />
+          <Image src={dummyComics[0].nftImage} m="auto" w="100%" fit="contain" />
         </Anchor>
         <Space h="md" />
         <Anchor component={Link} href={Paths.TOKEN_GRAPH}>
