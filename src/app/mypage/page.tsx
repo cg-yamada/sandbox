@@ -45,7 +45,8 @@ export default function Page() {
         </Anchor>
       </Paper>
 
-      <Paper mt={20} py={20} pl={20}>
+      <Text ml={8} mt={40} mb={12} fz={18} fw="bold" children="他の投稿作品" />
+      <Paper py={20} pl={20}>
         <ScrollArea w="100%">
           <Flex gap={20}>
             {dummyComics.map((comic) => (
