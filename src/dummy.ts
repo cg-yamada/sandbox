@@ -5,7 +5,7 @@ export const dummyComics: Comic[] = [
     id: "1",
     title: "投稿物Title01",
     creator: "投稿者名称01",
-    thumbnail: "images/500x300.png",
+    thumbnail: "images/300x600.png",
     nftImage: "images/nft.png",
     views: 5,
     likes: 24,
