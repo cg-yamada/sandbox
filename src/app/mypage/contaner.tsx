@@ -14,6 +14,7 @@ export const MypageContainer = () => {
 
   return (
     <>
+      <Text ml={4} mb={12} fz={18} fw="bold" children="最新の投稿作品" />
       <Paper pt={16} pb={12} px={20} shadow="xl" radius="md" key={currentComic.id}>
         <Flex justify="flex-end">
           <Badge ta="right" size="lg" children={currentComic.isPublic ? "公開中" : "非公開"} />
@@ -44,7 +45,7 @@ export const MypageContainer = () => {
         </Anchor>
       </Paper>
 
-      <Text ml={8} mt={40} mb={12} fz={18} fw="bold" children="他の投稿作品" />
+      <Text ml={4} mt={40} mb={12} fz={18} fw="bold" children="他の投稿作品" />
       <Paper py={20} shadow="xl" radius="sm">
         <ScrollArea w="100%">
           <Flex gap={20}>

@@ -10,7 +10,6 @@ export const ImageWithModal = ({ src, ...props }: ImageProps) => {
     <>
       <Image onClick={open} src={src} style={{ cursor: "pointer" }} fit="contain" {...props} />
       <Modal size="xl" opened={opened} onClose={close}>
-        {/* Modal content */}
         <Image onClick={open} src={src} w="100%" />
       </Modal>
     </>
