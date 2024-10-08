@@ -1,6 +1,6 @@
 import { Container } from "@mantine/core"
 import type { Metadata } from "next/types"
-import { CreateComicForm } from "./CreateComicForm"
+import { CreateContentForm } from "./CreateContentForm"
 
 export const metadata: Metadata = {
   title: "作品投稿",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <Container py={40}>
-      <CreateComicForm />
+      <CreateContentForm />
     </Container>
   )
 }

@@ -1,19 +1,24 @@
 export const APP_TITLE = "sptv-poc"
 
 export const Paths = {
-  COMICS: "/comics",
+  /** タイムライン */
+  CONTENTS: "/contents",
   /** 作品視聴 */
-  COMIC: "/comics/:id",
+  CONTENT: "/contents/:id",
   /** 作品投稿 */
-  COMIC_CREATE: "/comics/create",
-  /** 作品一覧 */
-  USER_COMICS: "/mypage",
+  CONTENT_CREATE: "/contents/create",
+  /** クリエイタ作品一覧 */
+  USER_CONTENTS: "/users/:id/contents",
+  /** マイページ */
+  MYPAGE: "/mypage",
+  /** TokenGraph */
+  MYPAGE_TOKEN_GRAPH: "/mypage/token-graph",
   /** 投稿実績 */
-  USER_ACHIVEMENT: "/mypage/achivement",
+  MYPAGE_ACHIVEMENT: "/mypage/achivement",
+  /** 応援履歴 */
+  MYPAGE_SUPPORT_HISTORY: "/mypage/support-history",
   /** 実績確認 */
   ADMIN: "/admin",
-  /** TokenGraph */
-  TOKEN_GRAPH: "/token-graph",
 } as const
 
 export const Images = {

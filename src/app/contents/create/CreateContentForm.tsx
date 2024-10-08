@@ -1,17 +1,17 @@
 "use client"
 
-import { type CreateComicFormInput, CreateComicFormSchema } from "@/app/features/comic/comicSchema"
 import { Paths } from "@/config/consts"
+import { type CreateContentFormInput, CreateContentFormSchema } from "@/features/content/contentSchema"
 import { Button, Flex, Group, Image, Paper, Stack, Text, TextInput } from "@mantine/core"
 import { Dropzone, type FileWithPath, IMAGE_MIME_TYPE } from "@mantine/dropzone"
 import { useForm, zodResolver } from "@mantine/form"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-export const CreateComicForm = () => {
+export const CreateContentForm = () => {
   const router = useRouter()
-  const form = useForm<CreateComicFormInput>({
-    validate: zodResolver(CreateComicFormSchema),
+  const form = useForm<CreateContentFormInput>({
+    validate: zodResolver(CreateContentFormSchema),
     initialValues: {
       title: "",
       image: "",
@@ -19,9 +19,9 @@ export const CreateComicForm = () => {
     },
   })
 
-  const handleSubmit = async (input: CreateComicFormInput) => {
+  const handleSubmit = async (input: CreateContentFormInput) => {
     console.log({ input })
-    router.push(Paths.USER_COMICS)
+    router.push(Paths.USER_CONTENTS)
   }
 
   const [currentImageUrl, setCurrentImageUrl] = useState("")

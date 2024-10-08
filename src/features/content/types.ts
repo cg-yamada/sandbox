@@ -1,4 +1,4 @@
-export interface Comic {
+export interface Content {
   id: string
   /** サムネイル画像 */
   thumbnail: string

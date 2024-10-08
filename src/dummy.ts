@@ -1,6 +1,6 @@
-import type { Comic } from "./app/features/comic/types"
+import type { Content } from "./features/content/types"
 
-export const dummyComics: Comic[] = [
+export const dummyContents: Content[] = [
   {
     id: "1",
     title: "投稿物Title01",

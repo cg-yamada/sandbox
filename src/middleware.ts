@@ -17,7 +17,7 @@ export const config = {
 export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === "/") {
     const url = request.nextUrl.clone()
-    url.pathname = Paths.COMICS
+    url.pathname = Paths.CONTENTS
     return NextResponse.redirect(url)
   }
   return NextResponse.next()
