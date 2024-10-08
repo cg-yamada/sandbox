@@ -1,5 +1,5 @@
 import { Paths } from "@/config/consts"
-import { Anchor, Box, Container, Flex, Image, Paper, ScrollArea, SimpleGrid, Stack, Text } from "@mantine/core"
+import { Anchor, Container, Flex, Image, Paper, ScrollArea, SimpleGrid, Stack, Text } from "@mantine/core"
 import Link from "next/link"
 import type { Metadata } from "next/types"
 
@@ -17,7 +17,7 @@ export default function Page() {
         <Image src="/images/nft.png" />
         <Image src="/images/nft-achivement.png" />
         <Image src="/images/nft-achivement.png" />
-        <Box />
+        <Text fw="bold" ta="center" children="100獲得" />
         <Text fw="bold" ta="center" children="100獲得" />
         <Text fw="bold" ta="center" children="100獲得" />
       </SimpleGrid>
@@ -38,7 +38,7 @@ export default function Page() {
         </ScrollArea>
       </Paper>
       <Flex justify="flex-end">
-        <Anchor mr={8} mt={20} fw="bold" component={Link} href={Paths.MYPAGE} children="マイページへ" />
+        <Anchor mr={8} mt={20} fw="bold" component={Link} href={Paths.CONTENTS} children="マイページへ" />
       </Flex>
     </Container>
   )

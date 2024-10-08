@@ -1,15 +1,15 @@
 export const APP_TITLE = "sptv-poc"
 
 export const Paths = {
-  /** タイムライン */
+  /** マイページ（タイムライン、ホーム） */
   CONTENTS: "/contents",
   /** 作品視聴 */
   CONTENT: "/contents/:id",
   /** 作品投稿 */
   CONTENT_CREATE: "/contents/create",
-  /** クリエイタ作品一覧 */
+  /** クリエイター投稿作品一覧 */
   USER_CONTENTS: "/users/:id/contents",
-  /** マイページ */
+  /** マイページ（ログインユーザーの投稿作品一覧） */
   MYPAGE: "/mypage",
   /** TokenGraph */
   MYPAGE_TOKEN_GRAPH: "/mypage/token-graph",
