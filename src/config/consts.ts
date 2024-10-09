@@ -7,7 +7,7 @@ export const Paths = {
   CONTENT: "/contents/:id",
   /** 作品投稿 */
   CONTENT_CREATE: "/contents/create",
-  /** クリエイター投稿作品一覧 */
+  /** クリエイター作品一覧 */
   USER_CONTENTS: "/users/:id/contents",
   /** ログインユーザーの投稿作品一覧 */
   MYPAGE: "/mypage",

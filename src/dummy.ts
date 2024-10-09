@@ -1,22 +1,26 @@
 import type { Content } from "./features/content/types"
 
-export const dummyContents: Content[] = [
-  {
-    id: "1",
-    title: "投稿物Title01",
-    creator: "投稿者名称01",
-    thumbnail: "/images/300x600.png",
+const dummyUser01Contents: Content[] = [
+  ...[...Array(8)].map((_, i) => ({
+    id: String(i + 1),
+    title: `投稿物タイトル0${String(i + 1)}`,
+    creator: "投稿者名01",
+    thumbnail: "/images/500x300.png",
     nftImage: "/images/nft.png",
-    views: 5,
-    likes: 24,
-    receivedPOL: 12,
-    isPublic: true,
-    tags: ["冒険", "アドベンチャー", "アニメ"],
-  },
+    views: 50,
+    likes: 5,
+    receivedPOL: 31,
+    isPublic: false,
+    tags: ["冒険", "アニメ"],
+  })),
+]
+
+export const dummyContents: Content[] = [
+  ...dummyUser01Contents,
   {
-    id: "2",
-    title: "投稿物Title02",
-    creator: "投稿者名称02",
+    id: "9",
+    title: "投稿物タイトル09",
+    creator: "投稿者名02",
     thumbnail: "/images/500x300.png",
     nftImage: "/images/nft.png",
     views: 20,
@@ -26,9 +30,9 @@ export const dummyContents: Content[] = [
     tags: ["冒険", "アニメ"],
   },
   {
-    id: "3",
-    title: "投稿物Title03",
-    creator: "投稿者名称03",
+    id: "10",
+    title: "投稿物タイトル10",
+    creator: "投稿者名03",
     thumbnail: "/images/500x300.png",
     nftImage: "/images/nft.png",
     views: 30,
@@ -38,9 +42,9 @@ export const dummyContents: Content[] = [
     tags: ["冒険", "アニメ"],
   },
   {
-    id: "4",
-    title: "投稿物Title04",
-    creator: "投稿者名称04",
+    id: "11",
+    title: "投稿物タイトル11",
+    creator: "投稿者名04",
     thumbnail: "/images/500x300.png",
     nftImage: "/images/nft.png",
     views: 30,
@@ -50,9 +54,9 @@ export const dummyContents: Content[] = [
     tags: ["冒険", "アニメ"],
   },
   {
-    id: "5",
-    title: "投稿物Title05",
-    creator: "投稿者名称05",
+    id: "12",
+    title: "投稿物タイトル12",
+    creator: "投稿者名05",
     thumbnail: "/images/500x300.png",
     nftImage: "/images/nft.png",
     views: 50,
