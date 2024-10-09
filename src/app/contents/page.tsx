@@ -6,8 +6,8 @@ import Link from "next/link"
 import type { Metadata } from "next/types"
 
 export const metadata: Metadata = {
-  title: "マイページ",
-  description: "マイページ",
+  title: "Home",
+  description: "Home",
 }
 
 export default function Page() {
