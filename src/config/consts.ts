@@ -14,8 +14,8 @@ export const Paths = {
   /** TokenGraph */
   MYPAGE_TOKEN_GRAPH: "/mypage/token-graph",
   /** 投稿実績 */
-  MYPAGE_ACHIVEMENT: "/mypage/achivement",
-  /** 応援履歴、視聴者の行動履歴や達成状況 */
+  MYPAGE_ACHIVEMENTS: "/mypage/achivements",
+  /** 応援実績、視聴者の行動履歴や達成状況 */
   MYPAGE_ACTIVITIES: "/mypage/activities",
   /** 実績確認 */
   ADMIN: "/admin",
