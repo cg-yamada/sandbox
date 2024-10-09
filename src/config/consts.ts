@@ -7,6 +7,8 @@ export const Paths = {
   CONTENT_CREATE: "/contents/create",
   /** クリエイター作品一覧 */
   CREATOR_CONTENTS: "/creators/:id",
+  /** 作品一覧、マイページ */
+  CREATOR_MYPAGE: "/creators/mypage",
   /** 投稿実績 */
   CREATORS_ACHIVEMENTS: "/creators/achivements",
   /** TokenGraph */
