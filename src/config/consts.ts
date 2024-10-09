@@ -3,12 +3,10 @@ export const APP_TITLE = "sptv-poc"
 export const Paths = {
   /** ホーム（タイムライン表示） */
   CONTENTS: "/contents",
-  /** 作品視聴 */
-  CONTENT: "/contents/:id",
   /** 作品投稿 */
   CONTENT_CREATE: "/contents/create",
   /** クリエイター作品一覧 */
-  CREATORS_CONTENTS: "/creators/:id",
+  CREATOR_CONTENTS: "/creators/:id",
   /** 投稿実績 */
   CREATORS_ACHIVEMENTS: "/creators/achivements",
   /** TokenGraph */

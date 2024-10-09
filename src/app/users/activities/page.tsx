@@ -1,3 +1,4 @@
+import { ImageWithModal } from "@/components/elements/ImageWithModal"
 import { Paths } from "@/config/consts"
 import { dummyHistories } from "@/dummy"
 import { ActionIcon, Anchor, Container, Image, Paper, ScrollArea, SimpleGrid, Table, TableTbody, TableTd, TableTr, Text } from "@mantine/core"
@@ -31,7 +32,7 @@ export default function Page() {
               {dummyHistories.map((row) => (
                 <TableTr key={row.createdAt}>
                   <TableTd>
-                    <Anchor component={Link} children={<Image src={row.itemImage} h={80} w={80} />} href={Paths.CONTENT.replace(":id", row.itemId)} />
+                    <ImageWithModal src={row.itemImage} h={80} w={80} />
                   </TableTd>
                   <TableTd>
                     <Text fz={12} children={row.createdAt} />

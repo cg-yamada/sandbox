@@ -25,7 +25,7 @@ export default function Page({ params }: Props) {
         {contents.map((item) => (
           <Paper pt={32} pb={12} px={20} shadow="xl" radius="md" key={item.id}>
             <ImageWithModal mb={16} h="200px" src={item.thumbnail} fit="contain" />
-            <Anchor component={Link} href={Paths.CONTENT.replace(":id", item.id)}>
+            <Anchor component={Link} href={Paths.CREATOR_CONTENTS.replace(":id", item.id)}>
               <Text fz={16} lh="20px" fw="bold" children={item.title} />
               <Text ml={2} fz={12} children={item.creator} />
             </Anchor>
