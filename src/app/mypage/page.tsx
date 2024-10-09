@@ -1,6 +1,6 @@
 import { Container } from "@mantine/core"
 import type { Metadata } from "next/types"
-import { MypageContainer } from "./contaner"
+import { MypageContainer } from "./container"
 
 export const metadata: Metadata = {
   title: "作品一覧",

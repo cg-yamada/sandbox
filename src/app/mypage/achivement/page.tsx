@@ -27,7 +27,7 @@ export default function Page() {
         <ScrollArea h={320}>
           <Stack>
             {dummyNFTs.map((v) => (
-              <Flex my={v === dummyNFTs.at(0) ? 20 : 0} mb={v === dummyNFTs.at(-1) ? 20 : 0} gap={28} align="center" key={v}>
+              <Flex mt={v === dummyNFTs.at(0) ? 20 : 0} mb={v === dummyNFTs.at(-1) ? 20 : 0} gap={28} align="center" key={v}>
                 <Anchor component={Link} href={Paths.MYPAGE_TOKEN_GRAPH}>
                   <Image src="/images/nft-achivement.png" h={80} w={80} />
                 </Anchor>
