@@ -11,11 +11,9 @@ export const Paths = {
   CREATORS_CONTENTS: "/creators/:id",
   /** 投稿実績 */
   CREATORS_ACHIVEMENTS: "/creators/achivements",
-  /** ログインユーザーの投稿作品一覧 */
-  USERS: "/users",
   /** TokenGraph */
   TOKEN_GRAPH: "/token-graph",
-  /** 応援実績、視聴者の行動履歴や達成状況 */
+  /** 応援実績（視聴者の行動履歴や達成状況） */
   USERS_ACTIVITIES: "/users/activities",
   /** 実績確認 */
   ADMIN: "/admin",
