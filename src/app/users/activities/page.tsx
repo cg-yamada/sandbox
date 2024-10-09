@@ -38,7 +38,7 @@ export default function Page() {
                     <Text children={row.content} />
                   </TableTd>
                   <TableTd>
-                    <ActionIcon variant="subtle" children={<Anchor component={Link} children={<IconLine />} href={Paths.MYPAGE_TOKEN_GRAPH} />} />
+                    <ActionIcon variant="subtle" children={<Anchor component={Link} children={<IconLine />} href={Paths.TOKEN_GRAPH} />} />
                   </TableTd>
                 </TableTr>
               ))}

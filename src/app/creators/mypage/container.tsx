@@ -9,7 +9,7 @@ import { IconCoinFilled, IconHeartFilled } from "@tabler/icons-react"
 import Link from "next/link"
 import { useState } from "react"
 
-export const MypageContainer = () => {
+export const CreatorMypageContainer = () => {
   const [currentContent, setCurrentContent] = useState<Content>(dummyContents[0])
 
   return (
@@ -26,11 +26,11 @@ export const MypageContainer = () => {
             <Badge bg="gray" children={tag} key={tag} />
           ))}
         </Flex>
-        <Anchor component={Link} href={Paths.MYPAGE_ACHIVEMENTS}>
+        <Anchor component={Link} href={Paths.CREATORS_ACHIVEMENTS}>
           <Image src={currentContent.nftImage} m="auto" w={100} fit="contain" />
         </Anchor>
         <Space h="md" />
-        <Anchor component={Link} href={Paths.MYPAGE_TOKEN_GRAPH}>
+        <Anchor component={Link} href={Paths.TOKEN_GRAPH}>
           <Group gap={16}>
             <Text children={`${currentContent.views}回閲覧`} />
             <Flex align="center">

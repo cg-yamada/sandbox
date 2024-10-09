@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Anchor component={Link} href={Paths.MYPAGE_ACTIVITIES} children="応援履歴画面へ（仮置き）" />
+      <Anchor component={Link} href={Paths.USERS_ACTIVITIES} children="応援履歴画面へ（仮置き）" />
       <Container py={40}>
         <SimpleGrid spacing={20} cols={1}>
           {dummyContents.map((item) => (

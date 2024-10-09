@@ -28,7 +28,7 @@ export default function Page() {
           <Stack>
             {dummyNFTs.map((v) => (
               <Flex mt={v === dummyNFTs.at(0) ? 20 : 0} mb={v === dummyNFTs.at(-1) ? 20 : 0} gap={28} align="center" key={v}>
-                <Anchor component={Link} href={Paths.MYPAGE_TOKEN_GRAPH}>
+                <Anchor component={Link} href={Paths.TOKEN_GRAPH}>
                   <Image src="/images/nft-achivement.png" h={80} w={80} />
                 </Anchor>
                 <Text fz={14} fw="bold" children="2024年01月12日" />
