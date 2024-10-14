@@ -21,7 +21,7 @@ export const CreateContentForm = () => {
 
   const handleSubmit = async (input: CreateContentFormInput) => {
     console.log({ input })
-    router.push(Paths.CREATOR_CONTENTS)
+    router.push(Paths.CONTENTS_BY_CREATORS)
   }
 
   const [currentImageUrl, setCurrentImageUrl] = useState("")

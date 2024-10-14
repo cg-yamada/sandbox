@@ -1,7 +1,7 @@
 import { ImageWithModal } from "@/components/elements/ImageWithModal"
 import { Paths } from "@/config/consts"
 import { dummyHistories } from "@/dummy"
-import { ActionIcon, Anchor, Container, Image, Paper, ScrollArea, SimpleGrid, Table, TableTbody, TableTd, TableTr, Text } from "@mantine/core"
+import { ActionIcon, Anchor, Container, Flex, Image, Paper, ScrollArea, SimpleGrid, Table, TableTbody, TableTd, TableTr, Text } from "@mantine/core"
 import { IconLine } from "@tabler/icons-react"
 import Link from "next/link"
 import type { Metadata } from "next/types"
@@ -35,11 +35,19 @@ export default function Page() {
                     <ImageWithModal src={row.itemImage} h={80} w={80} />
                   </TableTd>
                   <TableTd>
-                    <Text fz={12} children={row.createdAt} />
-                    <Text children={row.content} />
-                  </TableTd>
-                  <TableTd>
-                    <ActionIcon variant="subtle" children={<Anchor component={Link} children={<IconLine />} href={Paths.TOKEN_GRAPH} />} />
+                    <Text fz={12} c="gray.6" children={row.createdAt} />
+                    <Anchor
+                      style={{ textDecorationColor: "silver" }}
+                      underline="always"
+                      component={Link}
+                      href={Paths.CONTENTS_BY_CREATORS.replace(":id", row.creatorId)}
+                    >
+                      <Text fz={12} c="gray.6" children={`${row.itemTitle}(${row.creator})`} />
+                    </Anchor>
+                    <Flex mt={12} justify="space-between">
+                      <Text children={row.content} />
+                      <ActionIcon variant="subtle" children={<Anchor component={Link} children={<IconLine />} href={Paths.TOKEN_GRAPH} />} />
+                    </Flex>
                   </TableTd>
                 </TableTr>
               ))}
@@ -47,6 +55,10 @@ export default function Page() {
           </Table>
         </ScrollArea>
       </Paper>
+
+      <Flex mt={20} justify="flex-end">
+        <Anchor mr={8} fw="bold" component={Link} href={Paths.CONTENTS} children="Homeへ" />
+      </Flex>
     </Container>
   )
 }

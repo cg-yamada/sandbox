@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Anchor component={Link} href={Paths.USERS_ACTIVITIES} children="応援履歴画面へ（仮置き）" />
+      <Anchor component={Link} href={Paths.MYPAGE_VIEWERS} children="応援履歴画面へ（仮置き）" />
       <Container py={40}>
         <SimpleGrid spacing={20} cols={1}>
           {dummyContents.map((item) => (
             <Paper pt={32} pb={12} px={20} shadow="xl" radius="md" key={item.id}>
               <ImageWithModal mb={16} h="200px" src={item.thumbnail} fit="contain" />
-              <Anchor component={Link} href={Paths.CREATOR_CONTENTS.replace(":id", item.id)}>
+              <Anchor component={Link} href={Paths.CONTENTS_BY_CREATORS.replace(":id", item.id)}>
                 <Text fz={16} lh="20px" fw="bold" children={item.title} />
                 <Text ml={2} fz={12} children={item.creator} />
               </Anchor>

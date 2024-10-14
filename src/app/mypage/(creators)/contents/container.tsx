@@ -26,7 +26,7 @@ export const CreatorMypageContainer = () => {
             <Badge bg="gray" children={tag} key={tag} />
           ))}
         </Flex>
-        <Anchor component={Link} href={Paths.CREATORS_ACHIVEMENTS}>
+        <Anchor component={Link} href={Paths.MYPAGE_ACHIVEMENTS}>
           <Image src={currentContent.nftImage} m="auto" w={100} fit="contain" />
         </Anchor>
         <Space h="md" />

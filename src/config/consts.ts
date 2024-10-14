@@ -6,13 +6,15 @@ export const Paths = {
   /** 作品投稿 */
   CONTENT_CREATE: "/contents/create",
   /** クリエイター作品一覧 */
-  CREATOR_CONTENTS: "/creators/:id",
-  /** 投稿実績 */
-  CREATORS_ACHIVEMENTS: "/creators/achivements",
+  CONTENTS_BY_CREATORS: "/contents/creators/:id",
+  /** 作品一覧(クリエイターのみ) */
+  MYPAGE_CONTENTS: "/mypage/contents",
+  /** 投稿実績(クリエイターのみ) */
+  MYPAGE_ACHIVEMENTS: "/mypage/achivements",
+  /** 応援実績（視聴者のみ） */
+  MYPAGE_VIEWERS: "/mypage",
   /** TokenGraph */
   TOKEN_GRAPH: "/token-graph",
-  /** 応援実績（視聴者の行動履歴や達成状況） */
-  USERS_ACTIVITIES: "/users/activities",
   /** 実績確認 */
   ADMIN: "/admin",
 } as const

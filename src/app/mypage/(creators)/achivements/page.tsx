@@ -37,8 +37,8 @@ export default function Page() {
           </Stack>
         </ScrollArea>
       </Paper>
-      <Flex justify="flex-end">
-        <Anchor mr={8} mt={20} fw="bold" component={Link} href={Paths.CONTENTS} children="Homeへ" />
+      <Flex mt={20} justify="flex-end">
+        <Anchor mr={8} fw="bold" component={Link} href={Paths.CONTENTS} children="Homeへ" />
       </Flex>
     </Container>
   )
